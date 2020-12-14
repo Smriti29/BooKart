@@ -1,0 +1,30 @@
+<div id="main-content" class="container">
+     <div class="cart-value">
+       <div id="cartTotal">
+		   <div class="center-align">
+		 <span class="glyphicon glyphicon-shopping-cart"></span><span id="cartTotal1"> Cart Total: {{cartTotal | currency:"₹"}}</span>
+		 </div>
+         <button id="checkout" class="btn btn-primary" ng-if="cartTotal > 0" ng-click="buy()">Proceed to Checkout</button>
+       </div>
+     </div>       
+  	 <ul class="list-unstyled">
+  		<li class="book" ng-repeat="book in kart track by $index">
+		 <div id="booklist">
+			<div class="item">
+		    <img src="./images/{{book.bookUrl}}" />
+			</div>
+  		    <div id="bookinfo" class="clear-fix">       
+            <h2>{{book.name}}</h2>
+          	<h4>By {{book.author}} | <span style="font-size: 0.8em;">{{book.publisher}}</span></h4>
+			<span class='rating' ng-repeat="rating in [].constructor(book.rating) track by $index">&#x2605;</span>
+          	<div>{{book.price | currency:"₹"}} </div>
+			  <p class="book-description">{{book.description}}</p>
+			  <span id="{{ 'add-' + $index }}" class="add-notification">Item added to the cart</span>
+			  <div id="quantity">Quantity: <input type="number" name="quantity" value="1" ng-model="book.quantity" style="width: 50px;" min="1" max="15"></div>
+			  <button id="{{ 'rem-' + $index }}" class="btn btn-sm btn-primary remove" ng-click="remove($index)">Remove</button> 
+          	</div>
+         </div>  
+  		</li>
+  	 </ul>
+</div>
+<div id="emptyMessage" ng-if="kart.length==0">Kart is Empty!</div>

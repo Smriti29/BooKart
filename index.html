@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html ng-app="bookart">
+
+<head>
+  <title>BooKart</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <header>
+    <nav id="navbar-header" class="navbar navbar-inverse">
+      <div id="header-content" class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="pull-left visible-md visible-lg">
+            <div id="logo-img" alt="logo-image"></div>
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-target="#collapsable-nav"
+            aria-expanded="false" onclick="document.getElementById('collapsable-nav').style.display = 'block'">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a href="index.html">
+              <h1>BooKart</h1>
+            </a>
+          </div>
+          <div id="searchbox"><input type="text" id="bookname" placeholder="Search" ng-model="searchKeyword"><a
+              href="index.html"></a></div>
+          <div id="cart" class="pull-right">
+            <ul id="nav-list" class="nav navbar-nav navbar-right" ng-controller="kartctrl">
+              <li class="invisible-sm"><a href="#"><span class="glyphicon glyphicon-user"></span><br>Login / SignUp</a>
+              </li>
+              <li class="invisible-sm"><a href="#/books"><span class="glyphicon glyphicon-book"></span><br>Books</a>
+              </li>
+              <li><a href="#/kart"><span class="glyphicon glyphicon-shopping-cart"></span><span id="badge-id"
+                    class="badge badge-pill" ng-if="kart.length>0">{{kart.length}}</span><br>Cart</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="collapsable-nav"
+      onclick="document.getElementById('collapsable-nav').style.display = 'none'">
+      <div class="sidebar-background">
+      <ul id="nav-list1" class="nav navbar-nav navbar-right">
+        <div class="navbar-brand">
+          <a href="index.html">
+            <h1>BooKart</h1>
+          </a>
+        </div>
+        <div class="decorator-bar"></div>
+        <li class="visible-xs">
+          <a href="/">
+            <span class="glyphicon glyphicon-home"></span><br class="hidden-xs">Home</a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="glyphicon glyphicon-user"></span><br class="hidden-xs">login / SignUp
+          </a>
+        </li>
+        <li>
+          <a href="#/books">
+            <span class="glyphicon glyphicon-book"></span><br class="hidden-xs">Books</a>
+        </li>
+        <li>
+          <a href="#/kart">
+            <span class="glyphicon glyphicon-shopping-cart"></span><br class="hidden-xs">Cart</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <!-- ** .collapse .navbar-collapse**  -->
+    </div>
+  </header>
+  <div ng-view></div>
+  <footer>
+    <div class="footer-container">
+      <div class="hero-title">CONTACT</div>
+      <div class="hero-tel">
+        <span><i class="fas fa-phone-alt"></i></span>
+        <span> Customer Care : &nbsp;</span>
+        <span> +1-79-865-62288</span>
+      </div>
+      <div class="hero-tel">
+        <span><i class="fas fa-envelope"></i></span>
+        <span class="wow fadeInDown"> For any Support or enquiry : &nbsp;</span>
+        <span> <a class="wow fadeInDown" href="mailto:support@bookart.com">support@bookart.com</a></span>
+      </div>
+      <div alt="logo-image" style="margin: auto; display: table; position: relative;"><img
+          src="./images/book_logo.jpg" /></div>
+      <div style="text-align: center; margin: 20px; padding: 10px; font-size: 1.2rem;">Bookart Ltd. <span>&#169; 2020</span></div>
+    </div>
+  </footer>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
+  
+  <script src="app.js"></script>
+</body>
+
+</html>
