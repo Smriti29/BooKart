@@ -24,6 +24,9 @@
 body {
 	align-content: center;
 	font-family: 'Poppins', 'sans-serif';
+	scroll-behavior: smooth;
+	-moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 .waves-effect {
 	font-size: 1.2rem;
