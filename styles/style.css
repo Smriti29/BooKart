@@ -26,7 +26,8 @@ body {
 	font-family: 'Poppins', 'sans-serif';
 	scroll-behavior: smooth;
 	-moz-font-smoothing: antialiased;
-    -webkit-font-smoothing: antialiased;
+        -webkit-font-smoothing: antialiased;
+        -webkit-overflow-scrolling: touch;
 }
 .waves-effect {
 	font-size: 1.2rem;
@@ -290,7 +291,7 @@ button.navbar-toggle.collapsed {
 } 
 .footer-container {
 	position: relative;
-	top: 100px;
+	top: 20px;
 	background-color: black;
 	color:white;
 	height: 350px;
@@ -504,4 +505,18 @@ button.navbar-toggle.collapsed {
 		display: flex;
 		flex-direction: column;
 	}
+.lib-background {
+	background: url('../images/background1.jpg') no-repeat;
+	background-size: cover;
+	display: flex;
+	height: 500px;
+	background-attachment: fixed;
+}
+.lib-background2 {
+	background: url('../images/background.jpg') no-repeat;
+	background-size: cover;
+	display: flex;
+	height: 500px;
+	background-attachment: fixed;
+}
 }
